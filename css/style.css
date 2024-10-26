@@ -1,0 +1,444 @@
+
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+    --color: red;
+    --main-transition: all .5s;
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+
+}
+
+
+
+/* start effect all */
+.effect {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    border-top: 5px solid #000;
+    border-bottom: 5px solid #000;
+}
+
+.effect > .container {
+    min-height: 100vh;
+    position: relative;
+}
+
+.none {
+    display: none;
+}
+
+
+
+/*  
+===============================================
+===============================================
+*/
+
+/* bast background-color 
+background-color: #15212d;
+
+
+
+*/
+
+/*  
+===============================================
+===============================================
+*/
+
+/* start effect 1 */
+.effect-1 {
+    background: #000;
+}
+
+.effect-1 .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.effect-1 .mail {
+    width: 200px;
+    height: 120px;
+    background: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    overflow: hidden;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    clip-path: polygon(52% 48%, 100% 0%, 100% 100%, 0 100%, 0 0);
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+}
+
+.effect-1 .mail .line {
+    position: absolute;
+    width: 120%;
+    height: 5px;
+    background: #000;
+    top: 100%;
+    left: 0;
+    transform-origin: left;
+    animation: e1grow-line-one 2s forwards 1;
+    transform: rotate(-31deg);
+    -webkit-transform: rotate(-31deg);
+    -moz-transform: rotate(-31deg);
+    -ms-transform: rotate(-31deg);
+    -o-transform: rotate(-31deg);
+    -webkit-animation: e1grow-line-one 2s forwards 1;
+}
+
+@keyframes e1grow-line-one {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 120%;
+    }
+}
+
+.effect-1 .mail .line.two {
+    animation: none;
+    width: 0%;
+    top: -1%;
+    left: -1%;
+    animation: e1grow-line-two 2s forwards 1;
+    animation-delay: 1s;
+    transform: rotate(29deg);
+    -webkit-transform: rotate(29deg);
+    -moz-transform: rotate(29deg);
+    -ms-transform: rotate(29deg);
+    -o-transform: rotate(29deg);
+    -webkit-animation: e1grow-line-two 2s forwards 1;
+}
+
+@keyframes e1grow-line-two {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 60%;
+    }
+}
+
+.effect-1 .lid,
+.effect-1 .mail-backside {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    height: 120px;
+    background: #000;
+    transform-origin: top;
+    clip-path: polygon(52% 48%, 100% 0, 0 0);
+    background: #fff;
+    z-index: 4;
+    animation: e1open-lid 1s 1.5s forwards 1;
+    transition: var(--main-transition);
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    -webkit-transition: var(--main-transition);
+    -moz-transition: var(--main-transition);
+    -ms-transition: var(--main-transition);
+    -o-transition: var(--main-transition);
+    -webkit-animation: e1open-lid 1s 1.5s forwards 1;
+}
+
+.effect-1 .mail-backside {
+    z-index: -1;
+    animation: none;
+    -webkit-animation: none;
+    background: rgb(223, 223, 223);
+}
+
+@keyframes e1open-lid {
+    0% {
+        background: #fff;
+        transform: translate(-50%, -50%) rotateX(0);
+        -webkit-transform: translate(-50%, -50%) rotateX(0);
+        -moz-transform: translate(-50%, -50%) rotateX(0);
+        -ms-transform: translate(-50%, -50%) rotateX(0);
+        -o-transform: translate(-50%, -50%) rotateX(0);
+    }
+
+    100% {
+        background: rgb(180, 180, 180);
+        transform: translate(-50%, -50%) rotateX(-180deg);
+        -webkit-transform: translate(-50%, -50%) rotateX(-180deg);
+        -moz-transform: translate(-50%, -50%) rotateX(-180deg);
+        -ms-transform: translate(-50%, -50%) rotateX(-180deg);
+        -o-transform: translate(-50%, -50%) rotateX(-180deg);
+}
+}
+
+@keyframes e1drop-down {
+    0% {
+        top: 50%;
+        opacity: 1;
+    }
+
+    100% {
+        top: 100%;
+        opacity: 0;
+    }
+}
+
+.effect-1 .header {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background: url("../img/effect1/bg.jpg");
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: roboto, sans-serif;
+    animation: e1scale-up 1s 3.2s forwards 1;
+    transform: translate(-50%, -50%) scale(0.14);
+    -webkit-transform: translate(-50%, -50%) scale(0.14);
+    -moz-transform: translate(-50%, -50%) scale(0.14);
+    -ms-transform: translate(-50%, -50%) scale(0.14);
+    -o-transform: translate(-50%, -50%) scale(0.14);
+    -webkit-animation: e1scale-up 1s 3.2s forwards 1;
+}
+
+@keyframes e1scale-up {
+    0% {
+        transform: translate(-50%, -50%) scale(0.14);
+        -webkit-transform: translate(-50%, -50%) scale(0.14);
+        -moz-transform: translate(-50%, -50%) scale(0.14);
+        -ms-transform: translate(-50%, -50%) scale(0.14);
+        -o-transform: translate(-50%, -50%) scale(0.14);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        -webkit-transform: translate(-50%, -50%) scale(1);
+        -moz-transform: translate(-50%, -50%) scale(1);
+        -ms-transform: translate(-50%, -50%) scale(1);
+        -o-transform: translate(-50%, -50%) scale(1);
+}
+}
+
+.effect-1 .header .content {
+    width: 60%;
+    text-align: center;
+    color: #fff;
+    opacity: 0;
+    animation: e1fade-in 1s 4.2s forwards 1;
+    -webkit-animation: e1fade-in 1s 4.2s forwards 1;
+}
+
+@keyframes e1fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.effect-1 .header .content .heading {
+    text-transform: uppercase;
+    font-size: 100px;
+    font-weight: 700;
+    margin-bottom: 50px;
+}
+
+.effect-1 .header .content p {
+    font-size: 20px;
+    text-align: center;
+}
+
+
+
+
+
+
+
+/* end effect 1 */
+
+/*  
+===============================================
+===============================================
+*/
+
+/* start effect 2 */
+
+
+
+/* end effect 2 */
+
+
+/*  
+===============================================
+===============================================
+*/
+
+/* start effect 3 */
+
+
+
+/* end effect 3 */
+
+
+/*  
+===============================================
+===============================================
+*/
+
+/* start effect 4 */
+
+
+
+/* end effect 4 */
+
+
+/*  
+===============================================
+===============================================
+*/
+
+/* start effect 5 */
+
+
+
+/* end effect 5 */
+
+
+/*  
+===============================================
+===============================================
+*/
+
+/* start effect 6 */
+
+
+
+/* end effect 6 */
+
+
+/*  
+===============================================
+===============================================
+*/
+
+/* start effect 7 */
+
+
+
+/* end effect 7 */
+
+
+/*  
+===============================================
+===============================================
+*/
+
+/* start effect 8 */
+
+
+
+/* end effect 8 */
+
+
+/*  
+===============================================
+===============================================
+*/
+
+/* start effect 9 */
+
+
+
+/* end effect 9 */
+
+
+/*  
+===============================================
+===============================================
+*/
+
+/* start effect 10 */
+
+
+
+/* end effect 10 */
+
+
+/*  
+===============================================
+===============================================
+*/
+
+/* start effect 11 */
+
+
+
+/* end effect 11 */
+
+
+/*  
+===============================================
+===============================================
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
